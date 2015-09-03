@@ -65,17 +65,43 @@ if(isset($_POST['submit-form'])) {
 <html>
 <head>
 	<title>Registration</title>
+
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 <body>
 	<?php echo ($error != "") ? $error : ""; ?>
-	<form action="register.php" method="post">
+
+	<div class="container form">
+
+      <form action="register.php" method="post" class="form-signin">
+        <h2 class="form-signin-heading">Lets register</h2>
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input type="text" name="username" value="<?php echo $username; ?>" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+        
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="password" value="<?php echo $password; ?>" class="form-control" placeholder="Password" required>
+        
+        <label for="inputPassword" class="sr-only">Password again</label>
+        <input type="password" id="inputPassword" name="password-confirm" value="<?php echo $password_confirm; ?>" class="form-control" placeholder="Password again" required>
+        
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" name="email" value="<?php echo $email; ?>" class="form-control" placeholder="Email address" required>
+        
+
+        <input class="btn btn-lg btn-primary btn-block" value="Register" name="submit-form" type="submit">
+      </form>
+
+    </div>
+
+
+
+
+
+
 	
-	Username: <input type="text" value="<?php echo $username; ?>" name="username" /><br/>
-	Password: <input type="password" value="<?php echo $password; ?>" name="password" /><br/>
-	Password (confirm): <input type="password" value="<?php echo $password_confirm; ?>" name="password-confirm" /><br/>
-	E-Mail: <input type="text" value="<?php echo $email; ?>" name="email" /><br/>
-	<input type="submit" value="Register" name="submit-form" />
-	
-	</form>
 </body>
 </html>

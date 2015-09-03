@@ -25,20 +25,39 @@ if(isset($_POST['submit-login'])) {
 <html>
 <head>
 	<title>Login</title>
+
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 <body>
+
 <?php
+
 if($error != "")
 {
     echo $error."<br/>";
 }
 ?>
-	<form action="login.php" method="post">
-	    Username: <input type="text" name="username" value="<?php echo $username; ?>" /><br/>
-	    Password: <input type="password" name="password" value="<?php echo $password; ?>" /><br/>
-	    <input type="submit" value="Login" name="submit-login" />
+<div class="container form">
 
-	    <div>Or <a href="register.php">register</a></div>
-	</form>
+      <form action="login.php" method="post" class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Username</label>
+        <input type="text" name="username" value="<?php echo $username; ?>" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="password" value="<?php echo $password; ?>" class="form-control" placeholder="Password" required>
+        
+        <input class="btn btn-lg btn-primary btn-block" value="Login" name="submit-login" type="submit">
+      </form>
+
+    </div>
+
+
+
+	    <div id="alt-reg">Or <a href="register.php">register</a></div>
+
 </body>
 </html>

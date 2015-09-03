@@ -34,6 +34,12 @@ if(isset($_POST['submit-settings'])) {
 <html>
 <head>
 	<title>Change Settings</title>
+
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 <body>
 	<?php echo $message; ?>
